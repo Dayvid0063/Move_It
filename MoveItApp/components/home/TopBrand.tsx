@@ -5,14 +5,14 @@ type RenderTopBrandsProps = {
     topBrands: Brand[];
 };
 
-// Update the function to accept the new props type
+// Updated the function to accept the new props type
 export const TopBrands = ({ topBrands }: RenderTopBrandsProps) => (
     <View style={styles.section}>
         <Text style={styles.sectionTitle}>Top Brands</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.categoriesContainer}>
             {topBrands.map((brand: Brand) => (
                 <TouchableOpacity key={brand.id} style={styles.brandButton}>
-                    <Image source={{uri: brand.image}} style={styles.brandImage} />
+                    <Image source={{ uri: brand.image }} style={styles.brandImage} />
                     <Text style={styles.brandName}>{brand.name}</Text>
                 </TouchableOpacity>
             ))}

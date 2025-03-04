@@ -79,8 +79,8 @@ const EmptyState: React.FC<EmptyStateProps> = ({
       {searchQuery
         ? `No cars match "${searchQuery}"`
         : hasFilters
-        ? "No cars match your selected filters"
-        : "No cars available at the moment"}
+          ? "No cars match your selected filters"
+          : "No cars available at the moment"}
     </Text>
     {(searchQuery || hasFilters) && (
       <TouchableOpacity style={styles.resetButton} onPress={onReset}>
@@ -265,7 +265,7 @@ export default function ExploreScreen() {
                   style={[
                     styles.filterChipText,
                     activeFilters.brand === brand.name &&
-                      styles.activeFilterChipText,
+                    styles.activeFilterChipText,
                   ]}
                 >
                   {brand.name}
@@ -284,7 +284,7 @@ export default function ExploreScreen() {
                 style={[
                   styles.filterChip,
                   activeFilters.priceRange === range.label &&
-                    styles.activeFilterChip,
+                  styles.activeFilterChip,
                 ]}
                 onPress={() =>
                   setActiveFilters({
@@ -297,7 +297,7 @@ export default function ExploreScreen() {
                   style={[
                     styles.filterChipText,
                     activeFilters.priceRange === range.label &&
-                      styles.activeFilterChipText,
+                    styles.activeFilterChipText,
                   ]}
                 >
                   {range.label}
@@ -316,7 +316,7 @@ export default function ExploreScreen() {
                 style={[
                   styles.filterChip,
                   activeFilters.features.includes(feature) &&
-                    styles.activeFilterChip,
+                  styles.activeFilterChip,
                 ]}
                 onPress={() => {
                   const features = activeFilters.features.includes(feature)
@@ -329,7 +329,7 @@ export default function ExploreScreen() {
                   style={[
                     styles.filterChipText,
                     activeFilters.features.includes(feature) &&
-                      styles.activeFilterChipText,
+                    styles.activeFilterChipText,
                   ]}
                 >
                   {feature}

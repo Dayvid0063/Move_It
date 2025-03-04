@@ -32,13 +32,13 @@ export const CarCard: React.FC<CarCardProps> = ({ car }) => {
       params: { carId: car.id },
     });
   };
-  
+
   return (
     <TouchableOpacity style={styles.carCard} onPress={handlePress}>
       <View style={styles.container}>
         {/* Left side: Car Image */}
         <View style={styles.imageContainer}>
-          <Image source={{uri: car.images[0]}} style={styles.carImage} />
+          <Image source={{ uri: car.images[0] }} style={styles.carImage} />
           {/* Availability Badge */}
           {car.status === "AVAILABLE" && (
             <View style={styles.badge}>

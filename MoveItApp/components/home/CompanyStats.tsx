@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet, Platform } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { COLORS, FONTS, SIZES } from '@/constants/theme';
 
 export const CompanyStats: React.FC = () => (

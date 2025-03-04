@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   const [location, setLocation] = useState('Lagos, Nigeria');
   const [brands, setBrands] = useState([]);
   const [cars, setCars] = useState([]);
-  const [user, setUser] = useState<User | null>(null); 
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -66,9 +66,9 @@ const Home: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header 
-        location={location} 
-        userFirstName={user?.firstName || "Guest"} 
+      <Header
+        location={location}
+        userFirstName={user?.firstName || "Guest"}
         businessLogo={require('@/assets/images/Logo.png')}
         businessName='MoveIt'
       />
@@ -78,19 +78,19 @@ const Home: React.FC = () => {
             <CarLoader size={30} />
           </View>
         ) : (
-        <ScrollView 
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-        showsVerticalScrollIndicator={false}
-        style={styles.scrollView}
-        contentContainerStyle={styles.scrollContent}
-      >
-        <TopBrands topBrands={brands} />
-        <PopularVehicles cars={cars} onViewAll={handleViewAllCars} />
-      </ScrollView>)
+          <ScrollView
+            refreshControl={
+              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }
+            showsVerticalScrollIndicator={false}
+            style={styles.scrollView}
+            contentContainerStyle={styles.scrollContent}
+          >
+            <TopBrands topBrands={brands} />
+            <PopularVehicles cars={cars} onViewAll={handleViewAllCars} />
+          </ScrollView>)
       }
-      
+
     </SafeAreaView>
   );
 };

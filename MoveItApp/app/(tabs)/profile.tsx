@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  TouchableOpacity, 
-  Modal, 
-  TextInput, 
-  KeyboardAvoidingView, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Modal,
+  TextInput,
+  KeyboardAvoidingView,
   Platform,
   TouchableWithoutFeedback,
   Keyboard,
@@ -70,7 +70,7 @@ const UserProfile = () => {
   if (!userData) {
     return (
       <View style={styles.container}>
-       <CarLoader size={30} />
+        <CarLoader size={30} />
       </View>
     );
   }
@@ -99,15 +99,15 @@ const UserProfile = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity 
-          style={[styles.button, styles.editButton]} 
+        <TouchableOpacity
+          style={[styles.button, styles.editButton]}
           onPress={() => setIsModalVisible(true)}
         >
           <Text style={styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={[styles.button, styles.logoutButton]} 
+        <TouchableOpacity
+          style={[styles.button, styles.logoutButton]}
           onPress={handleLogout}
         >
           <Text style={[styles.buttonText, styles.logoutText]}>Log Out</Text>
@@ -120,19 +120,19 @@ const UserProfile = () => {
         transparent={true}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <KeyboardAvoidingView 
+          <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={styles.modalContainer}
           >
             <View style={styles.modalContent}>
               <Text style={styles.modalTitle}>Edit Profile</Text>
-              
+
               <View style={styles.inputContainer}>
                 <Text style={styles.label}>First Name</Text>
                 <TextInput
                   style={styles.input}
                   value={editedData?.firstName}
-                  onChangeText={(text) => setEditedData(prev => prev ? {...prev, firstName: text} : null)}
+                  onChangeText={(text) => setEditedData(prev => prev ? { ...prev, firstName: text } : null)}
                   placeholder="First Name"
                 />
               </View>
@@ -142,7 +142,7 @@ const UserProfile = () => {
                 <TextInput
                   style={styles.input}
                   value={editedData?.lastName}
-                  onChangeText={(text) => setEditedData(prev => prev ? {...prev, lastName: text} : null)}
+                  onChangeText={(text) => setEditedData(prev => prev ? { ...prev, lastName: text } : null)}
                   placeholder="Last Name"
                 />
               </View>
@@ -152,7 +152,7 @@ const UserProfile = () => {
                 <TextInput
                   style={styles.input}
                   value={editedData?.email}
-                  onChangeText={(text) => setEditedData(prev => prev ? {...prev, email: text} : null)}
+                  onChangeText={(text) => setEditedData(prev => prev ? { ...prev, email: text } : null)}
                   placeholder="Email"
                   keyboardType="email-address"
                   autoCapitalize="none"
@@ -164,15 +164,15 @@ const UserProfile = () => {
                 <TextInput
                   style={styles.input}
                   value={editedData?.phoneNumber}
-                  onChangeText={(text) => setEditedData(prev => prev ? {...prev, phoneNumber: text} : null)}
+                  onChangeText={(text) => setEditedData(prev => prev ? { ...prev, phoneNumber: text } : null)}
                   placeholder="Phone Number"
                   keyboardType="phone-pad"
                 />
               </View>
 
               <View style={styles.modalButtons}>
-                <TouchableOpacity 
-                  style={[styles.button, styles.cancelButton]} 
+                <TouchableOpacity
+                  style={[styles.button, styles.cancelButton]}
                   onPress={() => {
                     setEditedData(userData);
                     setIsModalVisible(false);
@@ -181,8 +181,8 @@ const UserProfile = () => {
                   <Text style={[styles.buttonText, styles.cancelText]}>Cancel</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity 
-                  style={[styles.button, styles.saveButton]} 
+                <TouchableOpacity
+                  style={[styles.button, styles.saveButton]}
                   onPress={handleSaveProfile}
                 >
                   <Text style={styles.buttonText}>Save</Text>
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     padding: 20,
-    paddingHorizontal :20
+    paddingHorizontal: 20
   },
   header: {
     marginBottom: 30,

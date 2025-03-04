@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, Image, StyleSheet, Alert } from 'react-native';
+import { View, Text, StyleSheet, Alert } from 'react-native';
 import { Link, router } from 'expo-router';
 import { COLORS, FONTS, SIZES } from '@/constants/theme';
 import { Input } from '@/components/shared/Input';

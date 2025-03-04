@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  FlatList, 
-  Image, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Image,
   useWindowDimensions,
   TouchableOpacity,
   Platform
@@ -47,9 +47,9 @@ export default function OnboardingScreen() {
 
   const handleNext = () => {
     if (currentIndex < ONBOARDING_SLIDES.length - 1) {
-      slidesRef.current?.scrollToIndex({ 
+      slidesRef.current?.scrollToIndex({
         index: currentIndex + 1,
-        animated: true 
+        animated: true
       });
     } else {
       setIsExiting(true);
@@ -68,7 +68,7 @@ export default function OnboardingScreen() {
 
   const RenderSlide = ({ item, index }: { item: typeof ONBOARDING_SLIDES[0], index: number }) => {
     const isActive = index === currentIndex;
-    
+
     return (
       <View style={[styles.slide, { width, height }]}>
         <MotiView
@@ -82,15 +82,15 @@ export default function OnboardingScreen() {
             easing: Easing.bezier(0.33, 1, 0.68, 1),
           }}
         >
-          <Image 
-            source={item.image} 
+          <Image
+            source={item.image}
             style={styles.image}
             resizeMode="contain"
           />
         </MotiView>
-        
+
         <View style={styles.overlay} />
-        
+
         <BlurView intensity={50} style={styles.contentWrapper}>
           <MotiView
             style={styles.contentContainer}
@@ -113,7 +113,7 @@ export default function OnboardingScreen() {
   };
 
   return (
-    <MotiView 
+    <MotiView
       style={styles.container}
       animate={{
         opacity: isExiting ? 0 : 1,
@@ -138,7 +138,7 @@ export default function OnboardingScreen() {
           setCurrentIndex(index);
         }}
       />
-      
+
       <View style={[styles.navigationContainer, { bottom: insets.bottom + 20 }]}>
         <AnimatePresence>
           {currentIndex !== ONBOARDING_SLIDES.length - 1 && (
@@ -189,7 +189,7 @@ export default function OnboardingScreen() {
             damping: 15,
           }}
         >
-          <TouchableOpacity 
+          <TouchableOpacity
             style={styles.nextButton}
             onPress={handleNext}
           >

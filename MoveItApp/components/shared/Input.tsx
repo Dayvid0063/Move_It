@@ -18,15 +18,15 @@ export const Input = ({ placeholder, value, onChangeText, secureTextEntry, autoC
 };
 
 const styles = StyleSheet.create({
-    input: {
-        height: 48,
-        borderWidth: 1,
-        borderColor: COLORS.gray[300],
-        borderRadius: SIZES.xs,
-        paddingHorizontal: SIZES.md,
-        marginBottom: SIZES.md,
-        fontSize: 16,
-        fontFamily: FONTS.regular,
-        color: COLORS.black,
-      },
-  });
+  input: {
+    height: 48,
+    borderWidth: 1,
+    borderColor: COLORS.gray[300],
+    borderRadius: SIZES.xs,
+    paddingHorizontal: SIZES.md,
+    marginBottom: SIZES.md,
+    fontSize: 16,
+    fontFamily: FONTS.regular,
+    color: COLORS.black,
+  },
+});

@@ -21,8 +21,8 @@ export default function Login() {
     setLoading(true);
     try {
       // Attempt to login with email and password
-      const response = await loginUser({email, password});
-      
+      const response = await loginUser({ email, password });
+
       const data = response.data.user;
       await AsyncStorage.setItem("user", JSON.stringify(data));
 
@@ -43,7 +43,7 @@ export default function Login() {
         resizeMode="contain"
       />
       <Text style={styles.title}>Welcome Back</Text>
-      
+
       <Input
         placeholder="Email"
         value={email}
@@ -51,20 +51,20 @@ export default function Login() {
         autoCapitalize="none"
         keyboardType="email-address"
       />
-      
+
       <Input
         placeholder="Password"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
-      
+
       <Link href="/forgot-password" style={styles.forgotPassword}>
         Forgot Password?
       </Link>
-      
+
       <Button title="Log In" onPress={handleLogin} isLoading={loading} />
-      
+
       <View style={styles.signupContainer}>
         <Text style={styles.signupText}>First time here? </Text>
         <Link href="/register" style={styles.signupLink}>

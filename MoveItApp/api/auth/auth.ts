@@ -46,7 +46,7 @@ const updateUser = (userEmail: string, updatedUserData: Partial<User>) =>
 
 const resendSecurityCode = (email: string) =>
   client.post(`${endpoint}/resend-security-code`, { email });
-const resendActivationCode = (email: string) => client.post(`${endpoint}/resend-activation-code`, {email});
+const resendActivationCode = (email: string) => client.post(`${endpoint}/resend-activation-code`, { email });
 
 export {
   getUsers,

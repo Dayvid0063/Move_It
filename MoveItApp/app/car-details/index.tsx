@@ -16,7 +16,6 @@ import Swiper from "react-native-swiper";
 import {
   MaterialCommunityIcons,
   Ionicons,
-  AntDesign,
 } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
 import { COLORS, FONTS, SIZES } from "@/constants/theme";

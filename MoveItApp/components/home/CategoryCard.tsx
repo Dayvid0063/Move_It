@@ -28,10 +28,10 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => (
       <Text style={styles.categoryDescription}>{category.description}</Text>
       <View style={styles.statsContainer}>
         <Text style={styles.statsText}>from $49/day</Text>
-        <MaterialCommunityIcons 
-          name="arrow-right" 
-          size={20} 
-          color={COLORS.primary} 
+        <MaterialCommunityIcons
+          name="arrow-right"
+          size={20}
+          color={COLORS.primary}
         />
       </View>
     </LinearGradient>

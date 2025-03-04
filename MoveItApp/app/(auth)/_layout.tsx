@@ -1,30 +1,29 @@
 import {
-    DarkTheme,
-    DefaultTheme,
-    ThemeProvider,
-  } from "@react-navigation/native";
-  import { Stack } from "expo-router";
-  import React from "react";
-  import { useColorScheme } from "react-native";
-  
-  export default function AuthLayout() {
-    const colorScheme = useColorScheme();
-    return (
-        <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-          <Stack
-            screenOptions={{
-              headerShown: false,
-            }}
-          >
-            {/* Authentication-related screens */}
-            <Stack.Screen name="index" />           
-            <Stack.Screen name="login/index" />
-            <Stack.Screen name="register/index" />
-            <Stack.Screen name="forgot-password/index" />
-            <Stack.Screen name="verification/index" />
-            <Stack.Screen name="onboarding/index" />
-          </Stack>
-        </ThemeProvider>
-    );
-  }
-  
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+} from "@react-navigation/native";
+import { Stack } from "expo-router";
+import React from "react";
+import { useColorScheme } from "react-native";
+
+export default function AuthLayout() {
+  const colorScheme = useColorScheme();
+  return (
+    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        {/* Authentication-related screens */}
+        <Stack.Screen name="index" />
+        <Stack.Screen name="login/index" />
+        <Stack.Screen name="register/index" />
+        <Stack.Screen name="forgot-password/index" />
+        <Stack.Screen name="verification/index" />
+        <Stack.Screen name="onboarding/index" />
+      </Stack>
+    </ThemeProvider>
+  );
+}

@@ -29,29 +29,29 @@ export const Button = ({ onPress, title, variant = 'primary', isLoading }: Butto
 };
 
 const styles = StyleSheet.create({
-    button: {
-      height: 48,
-      borderRadius: SIZES.xs,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginVertical: SIZES.sm,
-    },
-    primaryButton: {
-      backgroundColor: COLORS.primary,
-    },
-    outlineButton: {
-      backgroundColor: 'transparent',
-      borderWidth: 1,
-      borderColor: COLORS.primary,
-    },
-    buttonText: {
-      fontSize: 16,
-      fontFamily: FONTS.medium,
-    },
-    primaryButtonText: {
-      color: COLORS.white,
-    },
-    outlineButtonText: {
-      color: COLORS.primary,
-    },
-  });
+  button: {
+    height: 48,
+    borderRadius: SIZES.xs,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: SIZES.sm,
+  },
+  primaryButton: {
+    backgroundColor: COLORS.primary,
+  },
+  outlineButton: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontFamily: FONTS.medium,
+  },
+  primaryButtonText: {
+    color: COLORS.white,
+  },
+  outlineButtonText: {
+    color: COLORS.primary,
+  },
+});

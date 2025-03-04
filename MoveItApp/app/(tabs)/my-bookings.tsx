@@ -37,7 +37,7 @@ type User = {
 const MyBookings = () => {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<User | null>(null); 
+  const [user, setUser] = useState<User | null>(null);
 
 
   useEffect(() => {
@@ -47,12 +47,12 @@ const MyBookings = () => {
         setUser(JSON.parse(userData));
       }
     };
-  
+
     getUser();
   }, []);
-  
+
   const userId = user?.id;
-  
+
   useEffect(() => {
     if (userId) {
       fetchBookings();
@@ -61,7 +61,7 @@ const MyBookings = () => {
       setLoading(false);
     }
   }, [user]);
-  
+
   const fetchBookings = async () => {
     setLoading(true);
     if (!userId) {
@@ -69,7 +69,7 @@ const MyBookings = () => {
       setLoading(false);
       return;
     }
-  
+
     try {
       const response = await getUserBookings(userId);
       setBookings(response.data);
@@ -80,7 +80,7 @@ const MyBookings = () => {
       setLoading(false);
     }
   };
-  
+
 
   const getStatusColor = (status: Booking["status"]) => {
     switch (status) {
@@ -112,7 +112,7 @@ const MyBookings = () => {
           <Text style={styles.statusText}>{item.status}</Text>
         </View>
       </View>
-  
+
       <View style={styles.bookingDetails}>
         <View style={styles.detailRow}>
           <MaterialCommunityIcons
@@ -124,7 +124,7 @@ const MyBookings = () => {
             {new Date(item.startDate).toLocaleDateString()} - {new Date(item.endDate).toLocaleDateString()}
           </Text>
         </View>
-  
+
         <View style={styles.detailRow}>
           <MaterialCommunityIcons
             name="map-marker"
@@ -133,7 +133,7 @@ const MyBookings = () => {
           />
           <Text style={styles.detailText}>{item.pickupLocation}</Text>
         </View>
-  
+
         <View style={styles.detailRow}>
           <MaterialCommunityIcons
             name="cash"
@@ -145,7 +145,7 @@ const MyBookings = () => {
       </View>
     </TouchableOpacity>
   );
-  
+
 
   const renderHeader = () => (
     <BlurView intensity={80} tint="light" style={styles.headerContainer}>

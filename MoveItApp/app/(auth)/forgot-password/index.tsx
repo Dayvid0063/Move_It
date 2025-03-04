@@ -13,7 +13,7 @@ export default function ForgotPassword() {
       <Text style={styles.description}>
         Please enter your email address. You will receive a code to create a new password via email.
       </Text>
-      
+
       <Input
         placeholder="Email"
         value={email}
@@ -21,14 +21,14 @@ export default function ForgotPassword() {
         autoCapitalize="none"
         keyboardType="email-address"
       />
-      
-      <Button title="Send Code" onPress={() => {}} />
+
+      <Button title="Send Code" onPress={() => { }} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-container: {
+  container: {
     flex: 1,
     padding: SIZES.lg,
     backgroundColor: COLORS.white,

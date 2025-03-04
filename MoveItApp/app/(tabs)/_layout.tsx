@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router';
 import { View, StyleSheet, Platform } from 'react-native';
 import { BlurView } from 'expo-blur';
-import { COLORS, FONTS, SIZES } from '@/constants/theme';
+import { COLORS, FONTS } from '@/constants/theme';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function TabLayout() {
@@ -15,9 +15,9 @@ export default function TabLayout() {
         tabBarInactiveTintColor: COLORS.gray[600],
         tabBarLabelStyle: styles.tabLabel,
         tabBarBackground: () => (
-          <BlurView 
-            tint="dark" 
-            intensity={20} 
+          <BlurView
+            tint="dark"
+            intensity={20}
             style={StyleSheet.absoluteFill}
           />
         ),
@@ -30,9 +30,9 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size, focused }) => (
             <View style={styles.tabItemContainer}>
               <View style={[styles.iconContainer, focused && styles.activeIcon]}>
-                <MaterialCommunityIcons 
-                  name="home" 
-                  size={24} 
+                <MaterialCommunityIcons
+                  name="home"
+                  size={24}
                   color={focused ? COLORS.white : color}
                 />
               </View>
@@ -49,9 +49,9 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size, focused }) => (
             <View style={styles.tabItemContainer}>
               <View style={[styles.iconContainer, focused && styles.activeIcon]}>
-                <MaterialCommunityIcons 
-                  name="car-sports" 
-                  size={24} 
+                <MaterialCommunityIcons
+                  name="car-sports"
+                  size={24}
                   color={focused ? COLORS.white : color}
                 />
               </View>
@@ -68,9 +68,9 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size, focused }) => (
             <View style={styles.tabItemContainer}>
               <View style={[styles.iconContainer, focused && styles.activeIcon]}>
-                <MaterialCommunityIcons 
-                  name="calendar-clock" 
-                  size={24} 
+                <MaterialCommunityIcons
+                  name="calendar-clock"
+                  size={24}
                   color={focused ? COLORS.white : color}
                 />
               </View>
@@ -87,9 +87,9 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size, focused }) => (
             <View style={styles.tabItemContainer}>
               <View style={[styles.iconContainer, focused && styles.activeIcon]}>
-                <MaterialCommunityIcons 
-                  name="account" 
-                  size={24} 
+                <MaterialCommunityIcons
+                  name="account"
+                  size={24}
                   color={focused ? COLORS.white : color}
                 />
               </View>

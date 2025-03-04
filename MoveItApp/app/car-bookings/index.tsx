@@ -41,10 +41,10 @@ interface RedirectParams {
 }
 
 type User = {
-    firstName: string;
-    id: string;
-    email: string;
-  };
+  firstName: string;
+  id: string;
+  email: string;
+};
 
 const CarBookings = () => {
   const { carId, carName, pricePerDay } = useLocalSearchParams() as unknown as {
@@ -52,7 +52,7 @@ const CarBookings = () => {
     carName: string;
     pricePerDay: number;
   };
-  const [user, setUser] = useState<User | null>(null); 
+  const [user, setUser] = useState<User | null>(null);
 
 
   useEffect(() => {
@@ -62,10 +62,10 @@ const CarBookings = () => {
         setUser(JSON.parse(userData));
       }
     };
-  
+
     getUser();
   }, []);
-  
+
   const userId = user?.id || "";
 
   const [startDate, setStartDate] = useState(new Date());
@@ -104,7 +104,7 @@ const CarBookings = () => {
 
   const handleOnRedirect = async (data: RedirectParams) => {
     setIsInitializing(false);
-  
+
     if (data.status === "successful" || data.status === "completed") {
       const bookingDetails: BookingDetailsType = {
         startDate,
@@ -118,23 +118,23 @@ const CarBookings = () => {
         transactionId: data.transaction_id,
         transactionRef: data.tx_ref,
       };
-      
 
-        // Call createBooking to save booking details to the backend
-        const response = await createBooking(bookingDetails);
-  
-        if (response.status === 201) {
-          // Navigate to booking confirmation page if successful
-          router.push({
-            pathname: "/booking-confirmation",
-            params: { bookingDetails: JSON.stringify(bookingDetails) },
-          });
-        } else {
-          Alert.alert(
-            "Booking Failed",
-            "An error occurred while saving your booking."
-          );
-        }
+
+      // Call createBooking to save booking details to the backend
+      const response = await createBooking(bookingDetails);
+
+      if (response.status === 201) {
+        // Navigate to booking confirmation page if successful
+        router.push({
+          pathname: "/booking-confirmation",
+          params: { bookingDetails: JSON.stringify(bookingDetails) },
+        });
+      } else {
+        Alert.alert(
+          "Booking Failed",
+          "An error occurred while saving your booking."
+        );
+      }
     } else if (data.status === "cancelled") {
       Alert.alert(
         "Payment Cancelled",
@@ -142,7 +142,7 @@ const CarBookings = () => {
       );
     }
   };
-  
+
 
   const generateTransactionRef = () =>
     `booking-${Date.now()}-${Math.floor(Math.random() * 1000000)}`;
@@ -195,7 +195,7 @@ const CarBookings = () => {
         >
           <Text style={styles.payButtonText}>
             {isInitializing
-              ? 
+              ?
               <CarLoader size={50} />
               : `Pay ₦${calculateTotalAmount().toLocaleString()}`}
           </Text>
@@ -203,7 +203,7 @@ const CarBookings = () => {
       )}
     />
   );
-  
+
   return (
     <SafeAreaView style={styles.container}>
       {renderHeader()}
@@ -486,5 +486,4 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.medium,
     textDecorationLine: 'underline',
   }
-  
 });
