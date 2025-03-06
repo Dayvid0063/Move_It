@@ -1,1 +1,1 @@
-export const backendUrl = "http://192.168.0.119:5000";
+export const backendUrl = "https://moveit.chickenkiller.com";
